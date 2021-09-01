@@ -11,3 +11,5 @@ What you need is to:
 This program will destoy all events in calendar called "ZaxidFest_auto". So modify a code if you have one.
 
 I hope their site engine will remain the same for 2022 festival)
+
+**UPD**: Added Faine Misto support
