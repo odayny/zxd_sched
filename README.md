@@ -13,3 +13,5 @@ This program will destoy all events in calendar called "ZaxidFest_auto". So modi
 I hope their site engine will remain the same for 2022 festival)
 
 **UPD**: Added Faine Misto support
+**UPD**: Added Gaspop Metal Meeting support
+

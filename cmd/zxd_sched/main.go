@@ -22,7 +22,7 @@ import (
 func get_document(url string) goquery.Selection {
 	resp, err := http.Get(url)
 	if err != nil {
-		log.Fatalf("Unable to retrieve schedule page web: %v",err)
+		log.Fatalf("Unable to retrieve schedule page web: %v", err)
 	}
 
 	defer resp.Body.Close()

@@ -22,7 +22,7 @@ import (
 func get_document(url string) goquery.Selection {
 	resp, err := http.Get(url)
 	if err != nil {
-		log.Fatalf("Unable to retrieve schedule page web: %v",err)
+		log.Fatalf("Unable to retrieve schedule page web: %v", err)
 	}
 
 	defer resp.Body.Close()
@@ -223,7 +223,7 @@ func convert_fshow(fshow_list []FShow) []Show {
 		start_minute, _ := strconv.Atoi(strings.Split(strings.Trim(time_split[0], " "), ":")[1])
 		end_hour, _ := strconv.Atoi(strings.Split(strings.Trim(time_split[1], " "), ":")[0])
 		end_minute, _ := strconv.Atoi(strings.Split(strings.Trim(time_split[1], " "), ":")[1])
-		tz, _ := time.LoadLocation("Europe/Kiev")
+		tz, _ := time.LoadLocation("Europe/Brussels")
 		start_date := time.Date(year, time.Month(month), day, start_hour, start_minute, 0, 0, tz)
 		if start_hour < 9 {
 			start_date = start_date.AddDate(0, 0, 1)
@@ -234,12 +234,12 @@ func convert_fshow(fshow_list []FShow) []Show {
 		}
 		scene_num := len(scenes)
 		for i, scene := range scenes {
-			if (scene == fshow.scene) {
+			if scene == fshow.scene {
 				scene_num = i
 				break
 			}
 		}
-		if (scene_num == len(scenes)) {
+		if scene_num == len(scenes) {
 			scenes = append(scenes, fshow.scene)
 		}
 		result = append(result, Show{fshow.scene, strconv.Itoa(scene_num), fshow.name, start_date.Unix(), end_date.Unix(), fshow.url})
